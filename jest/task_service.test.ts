@@ -42,4 +42,14 @@ describe("TaskService", () => {
             expect(result.length).toBe(4);
         })
     })
+
+    describe("listActiveTask", () => {
+        let result: Task[]
+        beforeEach(() => {
+            result = taskSrv.listActiveTask()
+        })
+        test("長さ2の配列が得られる", () => {
+            expect(result.length).toBe(2);
+        })
+    })
 })
