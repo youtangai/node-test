@@ -11,11 +11,7 @@ export class TaskService {
         return this.taskRepository.listTask();
     }
 
-    getTask(id: number):Task {
-        return this.taskRepository.getTask(id);
-    }
-
-    getActiveTask(): Task[] {
+    listActiveTask(): Task[] {
         const tasks = this.taskRepository.listTask();
         return tasks.filter(task => task.isActive)
     }
