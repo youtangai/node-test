@@ -26,3 +26,5 @@ jobs:
       run: npm i
     - name: Test Jest
       run: npm run test-jest
+    - name: Test Mocha
+      run: npm run test-mocha
