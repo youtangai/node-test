@@ -31,10 +31,10 @@ let feedTask: Task[] = [
 
 describe("TaskService", () => {
     const listMock = jest.fn().mockReturnValue(feedTask);
-    const mockTaskRepo = jest.fn<TaskRepository, []>().mockImplementation(() => ({
+    const mockRepo:TaskRepository = {
         listTask: listMock,
-    }));
-    const taskSrv = new TaskService(mockTaskRepo());
+    }
+    const taskSrv = new TaskService(mockRepo);
 
     describe("listTask", () => {
         test("長さ4の配列が得られる", () => {
